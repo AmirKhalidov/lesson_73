@@ -28,30 +28,54 @@
 
 // export default App;
 
-import React, { useState } from 'react';
-import CustomSelectComponent from './CustomSelectComponent';
+// import React, { useState } from 'react';
+// import CustomSelectComponent from './CustomSelectComponent';
+
+// const App = () => {
+//     const [selectedValue, setSelectedValue] = useState('');
+
+//     const options = [
+//         { value: 'tech', label: 'Technology' },
+//         { value: 'health', label: 'Health' },
+//         { value: 'finance', label: 'Finance' },
+//     ];
+
+//     const handleChange = (event) => {
+//         setSelectedValue(event.target.value);
+//     };
+
+//     return (
+//         <div style={{ padding: '20px', maxWidth: '300px' }}>
+//             <CustomSelectComponent
+//                 value={selectedValue}
+//                 onChange={handleChange}
+//                 options={options}
+//                 placeholder="Select a category"
+//                 name="category"
+//             />
+//         </div>
+//     );
+// };
+
+// export default App;
+
+import { useState } from 'react';
+import CustomColorInput from './CustomColorInput';
 
 const App = () => {
-    const [selectedValue, setSelectedValue] = useState('');
-
-    const options = [
-        { value: 'tech', label: 'Technology' },
-        { value: 'health', label: 'Health' },
-        { value: 'finance', label: 'Finance' },
-    ];
+    const [colorValue, setColorValue] = useState('#F3F2F7');
 
     const handleChange = (event) => {
-        setSelectedValue(event.target.value);
+        setColorValue(event.target.value);
     };
 
     return (
-        <div style={{ padding: '20px', maxWidth: '300px' }}>
-            <CustomSelectComponent
-                value={selectedValue}
+        <div style={{ padding: '20px', maxWidth: '800px' }}>
+            <CustomColorInput
+                value={colorValue}
                 onChange={handleChange}
-                options={options}
-                placeholder="Select a category"
-                name="category"
+                placeholder="Enter color value or use picker"
+                name="colorInput"
             />
         </div>
     );
